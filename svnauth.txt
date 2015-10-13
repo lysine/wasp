@@ -1,0 +1,9 @@
+[groups]
+
+admin = svnuser
+
+svnusers = user@domain.com
+
+[/]
+@admin = rw
+@svnusers = rw
