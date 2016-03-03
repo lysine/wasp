@@ -1,5 +1,198 @@
 PHP                                                                        NEWS
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+03 Mar 2016, PHP 5.6.19
+
+- CLI server:
+  . Fixed bug #71559 (Built-in HTTP server, we can download file in web by bug).
+    (Johannes, Anatol)
+
+- CURL:
+  . Fixed bug #71523 (Copied handle with new option CURLOPT_HTTPHEADER crashes
+    while curl_multi_exec). (Laruence)
+
+- Date:
+  . Fixed bug #68078 (Datetime comparisons ignore microseconds). (Willem-Jan
+    Zijderveld)
+  . Fixed bug #71525 (Calls to date_modify will mutate timelib_rel_time,
+    causing date_date_set issues). (Sean DuBois)
+
+- Fileinfo:
+  . Fixed bug #71434 (finfo throws notice for specific python file). (Laruence)
+
+- FPM:
+  . Fixed bug #62172 (FPM not working with Apache httpd 2.4 balancer/fcgi
+    setup). (Matt Haught, Remi)
+
+- Opcache:
+  . Fixed bug  #71584 (Possible use-after-free of ZCG(cwd) in Zend Opcache).
+    (Yussuf Khalil)
+
+- PDO MySQL:
+  . Fixed bug #71569 (#70389 fix causes segmentation fault). (Nikita)
+
+- Phar:
+  . Fixed bug #71498 (Out-of-Bound Read in phar_parse_zipfile()). (Stas)
+
+- Standard:
+  . Fixed bug #70720 (strip_tags improper php code parsing). (Julien)
+
+- WDDX:
+  . Fixed bug #71587 (Use-After-Free / Double-Free in WDDX Deserialize). (Stas)
+
+- XSL:
+  . Fixed bug #71540 (NULL pointer dereference in xsl_ext_function_php()).
+    (Stas)
+
+- Zip:
+  . Fixed bug #71561 (NULL pointer dereference in Zip::ExtractTo). (Laruence)
+
+04 Feb 2016, PHP 5.6.18
+
+- Core:
+  . Fixed bug #71039 (exec functions ignore length but look for NULL
+    termination). (Anatol)
+  . Fixed bug #71089 (No check to duplicate zend_extension). (Remi)
+  . Fixed bug #71201 (round() segfault on 64-bit builds). (Anatol)
+  . Added support for new HTTP 451 code. (Julien)
+  . Fixed bug #71273 (A wrong ext directory setup in php.ini leads to crash).
+    (Anatol)
+  . Fixed bug #71323 (Output of stream_get_meta_data can be falsified by its
+    input). (Leo Gaspard)
+  . Fixed bug #71459 (Integer overflow in iptcembed()). (Stas)
+
+- Apache2handler:
+  . Fix >2G Content-Length headers in apache2handler. (Adam Harvey)
+
+- FTP:
+  . Implemented FR #55651 (Option to ignore the returned FTP PASV address).
+    (abrender at elitehosts dot com)
+
+- Opcache:
+  . Fixed bug #71127 (Define in auto_prepend_file is overwrite). (Laruence)
+  . Fixed bug #71024 (Unable to use PHP 7.0 x64 side-by-side with PHP 5.6 x32
+    on the same server). (Anatol)
+
+- PCRE:
+  . Upgraded bundled PCRE library to 8.38.
+
+- Phar:
+  . Fixed bug #71354 (Heap corruption in tar/zip/phar parser). (Stas)
+  . Fixed bug #71391 (NULL Pointer Dereference in phar_tar_setupmetadata()).
+    (Stas)
+  . Fixed bug #71488 (Stack overflow when decompressing tar archives). (Stas)
+
+- Session:
+  . Fixed bug #69111 (Crash in SessionHandler::read()). (Anatol)
+
+- SOAP:
+  . Fixed bug #70979 (crash with bad soap request). (Anatol)
+
+- SPL:
+  . Fixed bug #71204 (segfault if clean spl_autoload_funcs while autoloading).
+    (Laruence)
+
+- WDDX:
+  . Fixed bug #71335 (Type Confusion in WDDX Packet Deserialization). (Stas)
+
+07 Jan 2016, PHP 5.6.17
+
+- Core:
+  . Fixed bug #66909 (configure fails utf8_to_mutf7 test). (Michael Orlitzky)
+  . Fixed bug #70958 (Invalid opcode while using ::class as trait method
+    paramater default value). (Laruence)
+  . Fixed bug #70957 (self::class can not be resolved with reflection for
+    abstract class). (Laruence)
+  . Fixed bug #70944 (try{ } finally{} can create infinite chains of
+    exceptions). (Laruence)
+  . Fixed bug #61751 (SAPI build problem on AIX: Undefined symbol:
+    php_register_internal_extensions). (Lior Kaplan)
+
+- FPM:
+  . Fixed bug #70755 (fpm_log.c memory leak and buffer overflow). (Stas)
+
+- GD:
+  . Fixed bug #70976 (Memory Read via gdImageRotateInterpolated Array Index
+    Out of Bounds). (emmanuel dot law at gmail dot com)
+
+- Mysqlnd:
+  . Fixed bug #68077 (LOAD DATA LOCAL INFILE / open_basedir restriction).
+    (Laruence)
+
+- SOAP:
+  . Fixed bug #70900 (SoapClient systematic out of memory error). (Dmitry)
+
+- Standard:
+  . Fixed bug #70960 (ReflectionFunction for array_unique returns wrong number
+    of parameters). (Laruence)
+
+- PDO_Firebird:
+  . Fixed bug #60052 (Integer returned as a 64bit integer on X64_86). (Mariuz)
+
+- WDDX:
+  . Fixed bug #70661 (Use After Free Vulnerability in WDDX Packet
+    Deserialization). (taoguangchen at icloud dot com)
+  . Fixed bug #70741 (Session WDDX Packet Deserialization Type Confusion
+    Vulnerability). (taoguangchen at icloud dot com)
+
+- XMLRPC:
+  . Fixed bug #70728 (Type Confusion Vulnerability in PHP_to_XMLRPC_worker()).
+    (Julien)
+
+26 Nov 2015, PHP 5.6.16
+
+- Core:
+  . Fixed bug #70828 (php-fpm 5.6 with opcache crashes when referencing a
+    non-existent constant). (Laruence)
+  . Fixed bug #70748 (Segfault in ini_lex () at Zend/zend_ini_scanner.l).
+    (Laruence)
+
+- Mysqlnd:
+  . Fixed bug #68344 (MySQLi does not provide way to disable peer certificate
+    validation) by introducing MYSQLI_CLIENT_SSL_DONT_VERIFY_SERVER_CERT
+    connection flag. (Andrey)
+
+- OCI8:
+  . Fixed bug #68298 (OCI int overflow). (Senthil)
+
+- PDO_DBlib:
+  . Fixed bug #69757 (Segmentation fault on nextRowset).
+    (miracle at rpz dot name)
+
+- SOAP:
+  . Fixed bug #70875 (Segmentation fault if wsdl has no targetNamespace
+    attribute). (Matteo)
+
+- SPL:
+  . Fixed bug #70852 (Segfault getting NULL offset of an ArrayObject).
+    (Reeze Xia)
+
+29 Oct 2015, PHP 5.6.15
+
+- Core:
+  . Fixed bug #70681 (Segfault when binding $this of internal instance method
+    to null). (Nikita)
+  . Fixed bug #70685 (Segfault for getClosure() internal method rebind with
+    invalid $this). (Nikita)
+
+- Date:
+  . Fixed bug #70619 (DateTimeImmutable segfault). (Laruence)
+
+- Mcrypt:
+  . Fixed bug #70625 (mcrypt_encrypt() won't return data when no IV was
+    specified under RC4). (Nikita)
+
+- Mysqlnd:
+  . Fixed bug #70384 (mysqli_real_query():Unknown type 245 sent by the server).
+   (Andrey)
+  . Fixed bug #70572 segfault in mysqlnd_connect. (Andrey, Remi)
+
+- Opcache:
+  . Fixed bug #70632 (Third one of segfault in gc_remove_from_buffer).
+    (Laruence)
+  . Fixed bug #70631 (Another Segfault in gc_remove_from_buffer()). (Laruence)
+  . Fixed bug #70601 (Segfault in gc_remove_from_buffer()). (Laruence)
+  . Fixed compatibility with Windows 10 (see also bug #70652). (Anatol)
+
 01 Oct 2015, PHP 5.6.14
 
 - Core:
@@ -12,6 +205,10 @@ PHP                                                                        NEWS
 - DOM:
   . Fixed bug #70001 (Assigning to DOMNode::textContent does additional entity
     encoding). (cmb)
+
+- ldap:
+  . Fixed bug #70465 (Bug in ldap_search() modifies LDAP_OPT_TIMELIMIT/DEREF's values). (Tyson Andre)
+  . Fixed bug #69574 (ldap timeouts not enforced). (Côme Bernigaud)
 
 - Mysqlnd:
   . Fixed bug #70456 (mysqlnd doesn't activate TCP keep-alive when connecting to
