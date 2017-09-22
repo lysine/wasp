@@ -1,13 +1,13 @@
 
-	May 28, 2016 
+	February 6, 2017
 								Apache Haus Distribution 
 						
-	Application:		Mod subversion 1.9.4
-	Distribution File: mod_svn-1.9.4-ap24-x64.zip
+	Application:		Mod subversion 1.9.5
+	Distribution File: mod_svn-1.9.5-ap24-x64.zip
 	sqlite-amalgamation 3081101
 	OpenSSL 1.0.1
-	zlib-1.2.8
-	Serf 1.3.8
+	zlib-1.2.11
+	Serf 1.3.9
 
 	Original Home:      http://subversion.apache.org/
 
@@ -20,7 +20,6 @@
 	Requires at least 2.4.13
 
 	Supported Windows Versions:
-	Windows Vista 64 bit (no tested but assume to work)
 	Windows 7 64bit
 	Windows Server 2008 64bit
 	Windows Server 2008 R2

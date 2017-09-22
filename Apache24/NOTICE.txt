@@ -1,5 +1,5 @@
 Apache HTTP Server
-Copyright 2016 The Apache Software Foundation.
+Copyright 2017 The Apache Software Foundation.
 
 This product includes software developed at
 The Apache Software Foundation (http://www.apache.org/).
@@ -42,3 +42,7 @@ https://http://www.xmlsoft.org/
 This binary distribution of mod_http2.so includes nghttp2 C library written 
 by Tatsuhiro Tsujikawa. For complete information, visit nghttp2's web site 
 at https://nghttp2.org/
+
+This binary distribution of mod_brotli.so includes Brotli C library written 
+by the Brotli Authors. For complete information, visit Brotli's web site 
+at https://github.com/google/brotli

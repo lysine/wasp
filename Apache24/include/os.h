@@ -48,13 +48,13 @@
  * using many different versions of Visual Studio, it would be nice to
  * allow the user to know just which compiler the server was built on
  * allowing them to make a more informed choice when finding third party
- * modules to extend their server. This should show when calling http -V
- * from the command line in Windows. Thank you Microsoft form making it
- * such a mess!
+ * modules to extend their server. 
  */
 #if _MSC_VER
-#   if _MSC_VER == 1300 /* (Visual Studio 6) */
+#   if _MSC_VER == 1200 /* (Visual Studio 6) */
 #   define MSVC_COMPILER "Visual Studio 6"
+#   elif _MSC_VER == 1300 /* (Visual Studio .Net) */
+#   define MSVC_COMPILER "Visual Studio .Net"
 #   elif _MSC_VER == 1310 /* (Visual Studio .Net 2003) */
 #   define MSVC_COMPILER "Visual Studio .Net 2003"
 #   elif _MSC_VER == 1400 /* (Visual Studio 2005) */
@@ -67,8 +67,8 @@
 #   define MSVC_COMPILER "Visual Studio 2012"
 #   elif _MSC_VER == 1800 /* (Visual Studio 2013) */
 #   define MSVC_COMPILER "Visual Studio 2013"
-#   elif _MSC_VER == 1900 /* (Visual Studio 14) */
-#   define MSVC_COMPILER "Visual Studio 14"
+#   elif _MSC_VER == 1900 /* (Visual Studio 2015) */
+#   define MSVC_COMPILER "Visual Studio 2015"
 #   endif
 #endif
 
