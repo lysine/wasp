@@ -123,8 +123,8 @@
  */
 #ifndef APU_DSO_MODULE_BUILD
 #define APU_HAVE_PGSQL          0
-#define APU_HAVE_MYSQL          1
-#define APU_HAVE_SQLITE3        1
+#define APU_HAVE_MYSQL          0
+#define APU_HAVE_SQLITE3        0
 #define APU_HAVE_SQLITE2        0
 #define APU_HAVE_ORACLE         0
 #define APU_HAVE_ODBC           1
@@ -133,7 +133,7 @@
 #define APU_HAVE_CRYPTO         1
 
 #ifndef APU_DSO_MODULE_BUILD
-#define APU_HAVE_OPENSSL        0
+#define APU_HAVE_OPENSSL        1
 #define APU_HAVE_NSS            0
 #define APU_HAVE_COMMONCRYPTO   0
 #endif
